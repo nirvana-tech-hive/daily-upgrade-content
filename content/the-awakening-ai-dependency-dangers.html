@@ -1,110 +1,1286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Awakening: AI Dependency Dangers</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F8F9FA;
-            color: #0D1B2A;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: url('https://source.unsplash.com/1600x900/?nature,landscape') no-repeat center center/cover;
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin: 0;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-        }
-        .cta {
-            background-color: #C9A227;
-            color: #FFFFFF;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .cta:hover {
-            background-color: #0D1B2A;
-        }
-        section {
-            padding: 20px;
-            margin: 10px;
-            border-radius: 5px;
-            background: white;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #0D1B2A;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brain Upgrade #1: The Dangers of AI Dependency</title>
+  
+  <!-- Scoped Styles - All contained within unique ID -->
+  <style>
+    /* ========================================
+       SCOPED ARTICLE STYLES
+       All styles prefixed with #career-article-container
+       to prevent global conflicts
+    ======================================== */
+    
+    #career-article-container {
+      --navy-deep: #0d1b2a;
+      --navy-mid: #1b263b;
+      --navy-light: #415a77;
+      --gold-primary: #c9a227;
+      --gold-light: #e8d48b;
+      --cream: #f8f9fa;
+      --white: #ffffff;
+      --text-primary: #1a1a2e;
+      --text-secondary: #4a5568;
+      --text-muted: #6b7280;
+      --border-light: #e5e7eb;
+      --shadow-soft: rgba(13, 27, 42, 0.08);
+      --shadow-medium: rgba(13, 27, 42, 0.15);
+      --shadow-strong: rgba(13, 27, 42, 0.25);
+      
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: linear-gradient(180deg, #fefefe 0%, #f8f9fa 50%, #f1f3f5 100%);
+      color: var(--text-primary);
+      line-height: 1.75;
+      box-sizing: border-box;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    #career-article-container *,
+    #career-article-container *::before,
+    #career-article-container *::after {
+      box-sizing: border-box;
+    }
+    
+    /* Typography */
+    #career-article-container h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    
+    #career-article-container h2 {
+      font-size: 1.75rem;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    
+    #career-article-container h3 {
+      font-size: 1.25rem;
+      color: var(--navy-deep);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    #career-article-container h4 {
+      font-size: 1.1rem;
+      color: var(--navy-mid);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    #career-article-container p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+    
+    /* Header Section */
+    #career-article-container .article-header {
+      margin-bottom: 40px;
+      padding: 40px 0;
+      border-bottom: 3px solid var(--gold-primary);
+      position: relative;
+    }
+    
+    #career-article-container .article-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-light));
+      border-radius: 2px;
+    }
+    
+    #career-article-container .hook-label {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid));
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+    
+    #career-article-container .intro-hook {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin: 0;
+      line-height: 1.8;
+    }
+    
+    /* Hero Image */
+    #career-article-container .hero-figure {
+      margin: 40px 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    #career-article-container .hero-figure img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 20px 50px var(--shadow-medium);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+    
+    #career-article-container .hero-figure img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 60px var(--shadow-strong);
+    }
+    
+    #career-article-container .hero-figure figcaption {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    /* Accent Section (Agitate) */
+    #career-article-container .accent-section {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      color: var(--white);
+      padding: 50px 40px;
+      border-radius: 20px;
+      margin: 50px 0;
+      box-shadow: 0 25px 60px var(--shadow-strong);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    #career-article-container .accent-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201, 162, 39, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    #career-article-container .accent-section h2 {
+      color: var(--gold-primary);
+      position: relative;
+    }
+    
+    #career-article-container .accent-section p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Benefit Cards Grid */
+    #career-article-container .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    #career-article-container .benefit-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    
+    #career-article-container .benefit-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(201, 162, 39, 0.3);
+      transform: translateY(-3px);
+    }
+    
+    #career-article-container .benefit-card-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    #career-article-container .benefit-card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--navy-deep);
+      stroke-width: 2;
+      fill: none;
+    }
+    
+    #career-article-container .benefit-card h4 {
+      color: var(--white);
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+    
+    #career-article-container .benefit-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    
+    /* Light Content Section */
+    #career-article-container .content-section {
+      background: var(--white);
+      padding: 50px 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px var(--shadow-soft);
+      margin: 50px 0;
+      border: 1px solid var(--border-light);
+    }
+    
+    #career-article-container .content-section h2 {
+      color: var(--gold-primary);
+    }
+    
+    /* Quick Facts Grid */
+    #career-article-container .quick-facts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+    
+    #career-article-container .fact-item {
+      background: linear-gradient(135deg, var(--cream), #ffffff);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    #career-article-container .fact-item:hover {
+      border-color: var(--gold-primary);
+      box-shadow: 0 8px 25px var(--shadow-soft);
+    }
+    
+    #career-article-container .fact-item .fact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    #career-article-container .fact-item .fact-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+    }
+    
+    /* Lists */
+    #career-article-container ul {
+      padding: 0;
+      margin: 0 0 25px 0;
+      list-style: none;
+    }
+    
+    #career-article-container li {
+      display: flex;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    
+    #career-article-container li:last-child {
+      border-bottom: none;
+    }
+    
+    #career-article-container li .bullet {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      margin-top: 2px;
+    }
+    
+    #career-article-container li .bullet svg {
+      width: 12px;
+      height: 12px;
+      stroke: var(--navy-deep);
+      stroke-width: 3;
+      fill: none;
+    }
+    
+    /* Skill Cards */
+    #career-article-container .skill-card {
+      background: linear-gradient(135deg, var(--cream), #ffffff);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--gold-primary);
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    #career-article-container .skill-card:hover {
+      box-shadow: 0 10px 30px var(--shadow-soft);
+      transform: translateX(5px);
+    }
+    
+    #career-article-container .skill-card h4 {
+      color: var(--navy-deep);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    #career-article-container .skill-card h4 .skill-number {
+      background: var(--gold-primary);
+      color: var(--navy-deep);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    
+    #career-article-container .skill-card p {
+      margin-bottom: 15px;
+    }
+    
+    #career-article-container .skill-card .action-steps {
+      background: rgba(201, 162, 39, 0.08);
+      border-radius: 8px;
+      padding: 15px 20px;
+      margin-top: 15px;
+    }
+    
+    #career-article-container .skill-card .action-steps strong {
+      color: var(--navy-mid);
+      font-size: 0.9rem;
+    }
+    
+    /* Action Plan Grid */
+    #career-article-container .action-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin: 30px 0;
+    }
+    
+    #career-article-container .action-day {
+      background: var(--cream);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 15px 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    #career-article-container .action-day:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--shadow-soft);
+    }
+    
+    #career-article-container .action-day .day-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+    
+    #career-article-container .action-day .day-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+    }
+    
+    #career-article-container .action-day .day-task {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    
+    #career-article-container .action-day.weekend {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid));
+      border-color: transparent;
+    }
+    
+    #career-article-container .action-day.weekend .day-label,
+    #career-article-container .action-day.weekend .day-number,
+    #career-article-container .action-day.weekend .day-task {
+      color: var(--white);
+    }
+    
+    /* Support Image */
+    #career-article-container .support-figure {
+      margin: 50px 0;
+      text-align: center;
+    }
+    
+    #career-article-container .support-figure img {
+      width: 100%;
+      max-width: 700px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px var(--shadow-soft);
+    }
+    
+    /* CTA Section */
+    #career-article-container .cta-section {
+      text-align: center;
+      margin: 60px 0 40px;
+      padding: 50px 40px;
+      background: linear-gradient(135deg, var(--cream), #ffffff);
+      border-radius: 20px;
+      border: 2px solid var(--border-light);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    #career-article-container .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--gold-light), var(--gold-primary));
+    }
+    
+    #career-article-container .cta-section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    
+    #career-article-container .cta-section p {
+      max-width: 500px;
+      margin: 0 auto 25px;
+    }
+    
+    #career-article-container .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold-primary) 0%, #b8941f 100%);
+      color: var(--navy-deep);
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 18px 50px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 8px 30px rgba(201, 162, 39, 0.4);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    
+    #career-article-container .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(201, 162, 39, 0.5);
+    }
+    
+    #career-article-container .cta-button:focus {
+      outline: 3px solid var(--gold-light);
+      outline-offset: 3px;
+    }
+    
+    /* Quote Block */
+    #career-article-container .quote-block {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy-mid));
+      color: var(--white);
+      padding: 40px;
+      border-radius: 16px;
+      margin: 40px 0;
+      position: relative;
+      text-align: center;
+    }
+    
+    #career-article-container .quote-block::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 5rem;
+      color: var(--gold-primary);
+      opacity: 0.3;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    #career-article-container .quote-block p {
+      font-size: 1.25rem;
+      color: var(--white);
+      font-style: italic;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    #career-article-container .quote-block cite {
+      display: block;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      font-style: normal;
+    }
+    
+    /* Stats Row */
+    #career-article-container .stats-row {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    #career-article-container .stat-item {
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+    
+    #career-article-container .stat-item .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    
+    #career-article-container .stat-item .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    
+    /* Animations */
+    #career-article-container .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    #career-article-container .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    #career-article-container .reveal-delay-1 { transition-delay: 0.1s; }
+    #career-article-container .reveal-delay-2 { transition-delay: 0.2s; }
+    #career-article-container .reveal-delay-3 { transition-delay: 0.3s; }
+    
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      #career-article-container .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      
+      #career-article-container .hero-figure img,
+      #career-article-container .benefit-card,
+      #career-article-container .skill-card,
+      #career-article-container .action-day,
+      #career-article-container .fact-item,
+      #career-article-container .cta-button {
+        transition: none;
+      }
+    }
+    
+    /* ========================================
+       MOBILE OPTIMIZATION
+    ======================================== */
+    @media screen and (max-width: 600px) {
+      #career-article-container {
+        padding: 25px 15px;
+        background: var(--white);
+      }
+      
+      #career-article-container .article-header {
+        padding: 25px 0;
+        margin-bottom: 30px;
+      }
+      
+      #career-article-container h1 {
+        font-size: 1.75rem;
+        line-height: 1.25;
+        text-align: left;
+      }
+      
+      #career-article-container h2 {
+        font-size: 1.35rem;
+        text-align: left;
+      }
+      
+      #career-article-container h3 {
+        font-size: 1.15rem;
+        text-align: left;
+      }
+      
+      #career-article-container p {
+        font-size: 1rem;
+        text-align: left;
+      }
+      
+      #career-article-container .intro-hook {
+        font-size: 1rem;
+        text-align: left;
+      }
+      
+      #career-article-container .accent-section,
+      #career-article-container .content-section {
+        padding: 30px 20px;
+        margin: 30px 0;
+        border-radius: 16px;
+      }
+      
+      #career-article-container .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      #career-article-container .benefit-card {
+        padding: 20px;
+      }
+      
+      #career-article-container .quick-facts-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      #career-article-container .fact-item {
+        padding: 15px;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      #career-article-container .fact-item .fact-label {
+        margin-bottom: 0;
+      }
+      
+      #career-article-container li {
+        padding: 12px 0;
+        font-size: 0.95rem;
+      }
+      
+      #career-article-container li .bullet {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+      }
+      
+      #career-article-container li .bullet svg {
+        width: 10px;
+        height: 10px;
+      }
+      
+      #career-article-container .skill-card {
+        padding: 20px;
+        margin-bottom: 15px;
+      }
+      
+      #career-article-container .action-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      #career-article-container .action-day {
+        padding: 15px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      #career-article-container .action-day .day-label {
+        margin-bottom: 0;
+      }
+      
+      #career-article-container .action-day .day-number {
+        font-size: 1.25rem;
+        margin-bottom: 0;
+      }
+      
+      #career-article-container .action-day .day-task {
+        flex: 1;
+      }
+      
+      #career-article-container .hero-figure,
+      #career-article-container .support-figure {
+        margin: 25px 0;
+      }
+      
+      #career-article-container .hero-figure img,
+      #career-article-container .support-figure img {
+        border-radius: 10px;
+      }
+      
+      #career-article-container .hero-figure figcaption {
+        font-size: 0.85rem;
+      }
+      
+      #career-article-container .cta-section {
+        padding: 35px 25px;
+        margin: 40px 0 30px;
+      }
+      
+      #career-article-container .cta-section h3 {
+        font-size: 1.25rem;
+      }
+      
+      #career-article-container .cta-button {
+        padding: 16px 40px;
+        font-size: 1rem;
+      }
+      
+      #career-article-container .quote-block {
+        padding: 30px 25px;
+      }
+      
+      #career-article-container .quote-block p {
+        font-size: 1.1rem;
+      }
+      
+      #career-article-container .stats-row {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      #career-article-container .stat-item .stat-number {
+        font-size: 2rem;
+      }
+    }
+    
+    /* Tablet Breakpoint */
+    @media screen and (min-width: 601px) and (max-width: 900px) {
+      #career-article-container {
+        padding: 35px 25px;
+      }
+      
+      #career-article-container .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      #career-article-container .quick-facts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      #career-article-container .action-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>The Awakening: AI Dependency Dangers</h1>
-    </header>
-    <section>
-        <h2>Hook (Problem)</h2>
-        <p>In a rapidly advancing digital age, our reliance on AI technology has grown exponentially. While AI offers many benefits, the dangers of over-dependence are becoming evident.</p>
-    </section>
-    <section>
-        <h2>Agitate</h2>
-        <p>Imagine a world where critical thinking is replaced by algorithmic decisions. Our original capacities for creativity and innovation could diminish, leading to an apathetic society.</p>
-    </section>
-    <section>
-        <h2>Reframe</h2>
-        <p>Instead of viewing AI as a mere tool, we must see it as a powerful ally that can enhance our capabilities, provided we maintain control and establish boundaries.</p>
-    </section>
-    <section>
-        <h2>Solution Overview</h2>
-        <p>To harness AI responsibly, we need to create structures that encourage healthy interaction with technology, promoting personal growth and independence.</p>
-    </section>
-    <section>
-        <h2>Practical Playbook</h2>
-        <ol>
-            <li>Assess your usage of AI: Are you overly reliant on it?</li>
-            <li>Establish boundaries: Define when and how AI should assist you.</li>
-            <li>Engage in regular critical thinking exercises to strengthen your decision-making skills.</li>
-        </ol>
-    </section>
-    <section>
-        <h2>Future Outlook</h2>
-        <p>The potential of AI is limitless. However, a future where humanity thrives alongside AI will only be possible if we learn to coexist and communicate with it effectively.</p>
-    </section>
-    <section>
-        <h2>Weekly Action Plan</h2>
-        <p>Each week, set aside time to reflect on your AI usage and identify areas for improvement. Challenge yourself to engage in activities that require human insight without AI assistance.</p>
-    </section>
-    <section>
-        <h2>Reflective Conclusion</h2>
-        <p>By recognizing the dangers of AI dependency, we can foster a healthier relationship with technology that empowers rather than diminishes our capabilities.</p>
-    </section>
-    <footer>
-        <p>For more insights, visit our blog or subscribe for updates!</p>
-        <a class="cta" href="#">Subscribe Now!</a>
-    </footer>
-    <script>
-        document.querySelectorAll('h2').forEach(el => {
-            el.addEventListener('click', () => {
-                if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-                    el.classList.toggle('revealed');
-                    el.style.transition = 'all 0.5s ease';
-                }
-            });
-        });
-    </script>
+
+<div id="career-article-container">
+  
+  <!-- ========================================
+       SECTION 1: HOOK (Problem)
+  ======================================== -->
+  <header class="article-header">
+    <span class="hook-label">Brain Upgrade #1</span>
+    <h1>The Dangers of AI Dependency: Reclaim Your Cognitive Independence</h1>
+    <p class="intro-hook">
+      When was the last time you memorized a phone number? Not your spouse's—a friend's number, a colleague's extension, the digits to call when your car breaks down? If you're like most people, you can't remember. Your phone remembers for you. And this convenience is quietly reshaping your brain in ways neuroscientists are only beginning to understand.
+    </p>
+  </header>
+  
+  <!-- HERO IMAGE -->
+  <figure class="hero-figure reveal">
+    <img 
+      src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80" 
+      alt="Human brain with glowing neural connections, symbolizing cognitive strength and neural pathways"
+      loading="eager"
+    >
+    <figcaption>The average adult consults their smartphone 96 times per day—once every 10 waking minutes. What is this doing to your brain?</figcaption>
+  </figure>
+  
+  <!-- ========================================
+       SECTION 2: AGITATE (Deepen the Problem)
+  ======================================== -->
+  <section class="accent-section reveal">
+    <h2>What's Really Happening to Your Brain</h2>
+    <p>
+      The danger is not that AI will become sentient and overthrow humanity. The danger is far more insidious: <strong>we are becoming cognitively dependent on tools we do not understand, for tasks we once performed ourselves.</strong>
+    </p>
+    
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-number">96×</div>
+        <div class="stat-label">Daily phone checks</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8 sec</div>
+        <div class="stat-label">Average attention span</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50%</div>
+        <div class="stat-label">Tasks outsourced to AI</div>
+      </div>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4>The Memory Paradox</h4>
+        <p>People who rely heavily on GPS show reduced hippocampus activity—the brain region for spatial memory. Literally shrinking from disuse.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h4>Attention Fragmentation</h4>
+        <p>AI-powered notifications train our brains for perpetual distraction. Deep work—the state where insight occurs—becomes increasingly rare.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h4>Critical Thinking Erosion</h4>
+        <p>When AI writes your drafts and suggests your conclusions, you bypass the struggle where learning actually happens.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Skill Atrophy Cycle</h4>
+        <p>First AI assists, then it suggests, then it generates. At each stage, your capability degrades imperceptibly until you become an editor, not a creator.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========================================
+       SECTION 3: REFRAME (Shift Mindset)
+  ======================================== -->
+  <section class="content-section reveal">
+    <h2>AI Replaces Tasks, Not People—Yet</h2>
+    
+    <p>
+      Here's the crucial insight: <strong>AI does not replace humans. AI replaces human tasks.</strong> And which tasks does it replace first? The routine, the algorithmic, the repeatable—precisely the tasks that once built foundational skills.
+    </p>
+    
+    <p>
+      A junior lawyer once learned their craft by reviewing thousands of contracts, spotting patterns, developing an intuitive sense for risk. Now AI reviews those contracts in seconds. The lawyer is freed from drudgery—but also from the apprenticeship that made seniors senior.
+    </p>
+    
+    <div class="quote-block">
+      <p>The Counter-AI Movement focuses not on rejecting AI, but on maintaining human capability alongside AI utility. The goal is cognitive independence.</p>
+    </div>
+    
+    <p>
+      This is why we focus on <strong>cognitive independence</strong>—remaining a thinking, capable human even while using thinking machines. Use AI as a tool for amplification, not a crutch for atrophy.
+    </p>
+  </section>
+  
+  <!-- SUPPORT IMAGE 1 -->
+  <figure class="support-figure reveal">
+    <img 
+      src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=700&q=80" 
+      alt="Person writing in notebook by hand, representing cognitive engagement and deliberate practice"
+      loading="lazy"
+    >
+  </figure>
+  
+  <!-- ========================================
+       SECTION 4: SOLUTION OVERVIEW
+  ======================================== -->
+  <section class="content-section reveal">
+    <h2>The Cognitive Independence Model</h2>
+    
+    <p>
+      Future-proofing your brain requires three interlocking practices that ensure you use AI as a tool for amplification, not a crutch for atrophy:
+    </p>
+    
+    <div class="quick-facts-grid">
+      <div class="fact-item">
+        <span class="fact-label">Practice 1</span>
+        <span class="fact-value">Capability Audit</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">Practice 2</span>
+        <span class="fact-value">Cognitive Calisthenics</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">Practice 3</span>
+        <span class="fact-value">Augmented Mastery</span>
+      </div>
+      <div class="fact-item">
+        <span class="fact-label">Outcome</span>
+        <span class="fact-value">True Independence</span>
+      </div>
+    </div>
+    
+    <p>
+      The <strong>Capability Audit</strong> identifies dependencies. The <strong>Cognitive Calisthenics Program</strong> strengthens atrophied skills through deliberate "hard way" practice. The <strong>Augmented Mastery Approach</strong> ensures you engage critically with AI rather than accepting output passively. Together, you remain the pilot of your mind.
+    </p>
+  </section>
+  
+  <!-- ========================================
+       SECTION 5: PRACTICAL PLAYBOOK
+  ======================================== -->
+  <section class="content-section reveal">
+    <h2>Five Cognitive Exercises to Reclaim Your Brain</h2>
+    
+    <p>
+      Here are five specific exercises targeting mental capabilities that AI threatens to erode. Practice them consistently, and you will notice the difference within weeks:
+    </p>
+    
+    <!-- Skill 1 -->
+    <div class="skill-card">
+      <h4><span class="skill-number">1</span>The Memory Palace Protocol</h4>
+      <p>
+        Memory is the foundation of learning, reasoning, and creativity. When memory weakens, every cognitive task becomes harder. AI can store information, but only you can integrate it into your understanding. Create a mental "memory palace"—a familiar place where you store vivid, memorable images representing information you want to retain.
+      </p>
+      <div class="action-steps">
+        <strong>Start This Week:</strong> Each morning, identify 5 pieces of information to remember. Place them in your memory palace with vivid images. Walk through mentally three times daily. After one week, test yourself.
+      </div>
+    </div>
+    
+    <!-- Skill 2 -->
+    <div class="skill-card">
+      <h4><span class="skill-number">2</span>The Handwriting Revival</h4>
+      <p>
+        Handwriting engages the brain differently than typing. Studies show students who take notes by hand retain more conceptual understanding. The slower speed forces selection and synthesis—active thinking rather than passive transcription. Voice-to-text and AI transcription have made handwriting rare, but the connected thinking it promotes is invaluable.
+      </p>
+      <div class="action-steps">
+        <strong>Start This Week:</strong> Write by hand for 15 minutes daily. Use quality pen and paper. Write complete sentences and paragraphs. Notice the difference in how you think while writing versus typing.
+      </div>
+    </div>
+    
+    <!-- Skill 3 -->
+    <div class="skill-card">
+      <h4><span class="skill-number">3</span>The Mental Mathematics Challenge</h4>
+      <p>
+        Numerical reasoning is fundamental to decision-making. When you calculate mentally, you develop intuitive number sense that informs judgment even when not actively calculating. Most adults now struggle with calculations elementary students once performed routinely. The intuitive number sense mental math builds atrophies from disuse.
+      </p>
+      <div class="action-steps">
+        <strong>Start This Week:</strong> Perform 3 calculations mentally before checking with a calculator. Start simple: tips, estimates, percentages. Gradually increase difficulty. Track accuracy over time.
+      </div>
+    </div>
+    
+    <!-- Skill 4 -->
+    <div class="skill-card">
+      <h4><span class="skill-number">4</span>The Focus Fortress Practice</h4>
+      <p>
+        Deep focus is where complex learning, creative insight, and meaningful work occur. AI-powered systems capture and fragment attention. The average attention span has dropped from 12 seconds to under 8 seconds—shorter than a goldfish. By training focus deliberately, you maintain a capability that becomes scarcer every year.
+      </p>
+      <div class="action-steps">
+        <strong>Start This Week:</strong> Choose one important task for "focus fortress" mode. Set 45 minutes. Close all tabs, silence notifications. When your mind wanders, notice and return. Gradually extend duration.
+      </div>
+    </div>
+    
+    <!-- Skill 5 -->
+    <div class="skill-card">
+      <h4><span class="skill-number">5</span>The AI Critique Protocol</h4>
+      <p>
+        Using AI well requires engaging critically, not passively. When you accept AI output without scrutiny, you cede judgment to an algorithm. When you critique and refine, you extend your thinking through a powerful tool. The protocol transforms AI from a replacement for thinking into a tool for thinking.
+      </p>
+      <div class="action-steps">
+        <strong>Start This Week:</strong> Every time you use AI substantively, ask: What assumptions are embedded? What perspectives are missing? Make at least one improvement before using output. Track the gaps you find.
+      </div>
+    </div>
+  </section>
+  
+  <!-- SUPPORT IMAGE 2 -->
+  <figure class="support-figure reveal">
+    <img 
+      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80" 
+      alt="Person in deep concentration working on complex problem, representing cognitive focus and independence"
+      loading="lazy"
+    >
+  </figure>
+  
+  <!-- ========================================
+       SECTION 6: FUTURE OUTLOOK
+  ======================================== -->
+  <section class="accent-section reveal">
+    <h2>The Cognitive Divide: Which Path Will You Choose?</h2>
+    
+    <p>
+      The coming decade will see a divergence in human cognitive capability unlike any in history.
+    </p>
+    
+    <p>
+      On one path are those who surrender progressively more mental function to AI. Their productivity will rise initially, but their independent capabilities will degrade. They will become dependent on systems they do not understand.
+    </p>
+    
+    <p>
+      On the other path are those who maintain cognitive independence while using AI strategically. They will have AI's speed and scale, combined with human depth and judgment. When AI fails, they will still be able to think.
+    </p>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h4>The Dependent Path</h4>
+        <p>Outsourced memory, fragmented attention, eroded critical thinking, skill atrophy, vulnerability to AI failures</p>
+      </div>
+      <div class="benefit-card">
+        <h4>The Independent Path</h4>
+        <p>Trained memory, deep focus capability, sharp critical thinking, maintained skills, resilience and adaptability</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ========================================
+       SECTION 7: WEEKLY ACTION PLAN
+  ======================================== -->
+  <section class="content-section reveal">
+    <h2>Your First Seven Days of Cognitive Independence</h2>
+    
+    <p>
+      Theory without action is useless. Here is a concrete plan for your first week:
+    </p>
+    
+    <div class="action-grid">
+      <div class="action-day">
+        <span class="day-label">Day</span>
+        <span class="day-number">1</span>
+        <span class="day-task">List all cognitive functions you outsource to AI. Rate your independence 1-5.</span>
+      </div>
+      <div class="action-day">
+        <span class="day-label">Day</span>
+        <span class="day-number">2</span>
+        <span class="day-task">Learn Memory Palace technique. Memorize 10 items: 3 phone numbers, passport, 5 work facts.</span>
+      </div>
+      <div class="action-day">
+        <span class="day-label">Day</span>
+        <span class="day-number">3</span>
+        <span class="day-task">Write by hand for 20 minutes. Reflect on your AI dependencies and what you noticed.</span>
+      </div>
+      <div class="action-day">
+        <span class="day-label">Day</span>
+        <span class="day-number">4</span>
+        <span class="day-task">Perform every calculation mentally first. Check with calculator after. Note accuracy.</span>
+      </div>
+      <div class="action-day">
+        <span class="day-label">Day</span>
+        <span class="day-number">5</span>
+        <span class="day-task">Complete one 45-minute focus fortress session. Notice distraction impulses. Resist. Complete.</span>
+      </div>
+      <div class="action-day weekend">
+        <span class="day-label">Day</span>
+        <span class="day-number">6</span>
+        <span class="day-task">Use AI substantively, then apply critique protocol. Find 3 improvements. Document gaps.</span>
+      </div>
+      <div class="action-day weekend">
+        <span class="day-label">Day</span>
+        <span class="day-number">7</span>
+        <span class="day-task">Review your week. Which exercises challenged most? Design your ongoing practice schedule.</span>
+      </div>
+    </div>
+    
+    <ul>
+      <li>
+        <span class="bullet"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>Each action builds on the previous day—consistency matters more than intensity</span>
+      </li>
+      <li>
+        <span class="bullet"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>The weekend reflection is crucial—without it, learning rarely sticks</span>
+      </li>
+      <li>
+        <span class="bullet"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span>Sharing insights with others reinforces your understanding and builds accountability</span>
+      </li>
+    </ul>
+  </section>
+  
+  <!-- ========================================
+       SECTION 8: REFLECTIVE CONCLUSION
+  ======================================== -->
+  <section class="content-section reveal">
+    <h2>The Choice Before You</h2>
+    
+    <p>
+      You are reading this because something in you recognizes the danger. Perhaps you have noticed your own memory weakening. Perhaps you have felt the frustration of trying to focus while devices pull at your attention. Perhaps you have caught yourself accepting AI output without scrutiny.
+    </p>
+    
+    <p>
+      This recognition is the first step. It is also the easiest. The harder step is consistent action—day after day, choosing cognitive effort over cognitive convenience, maintaining capabilities that AI could provide more easily.
+    </p>
+    
+    <p>
+      Your cognitive capabilities are not just tools for work—they are the substance of your mind, the foundation of your independence, the source of your unique contribution to the world. When you outsource thinking, you outsource a piece of what makes you human.
+    </p>
+    
+    <div class="quote-block">
+      <p>Your brain is yours. Keep it that way.</p>
+    </div>
+    
+    <p>
+      <strong>Bonus Tool:</strong> <a href="https://apps.ankiweb.net/" style="color: var(--gold-primary); font-weight: 600;">Anki</a> — A free, open-source flashcard app using spaced repetition to optimize memory retention. It helps you remember more efficiently, but you still do the remembering.
+    </p>
+  </section>
+  
+  <!-- ========================================
+       CALL TO ACTION
+  ======================================== -->
+  <section class="cta-section reveal">
+    <h3>Ready to Reclaim Your Cognitive Independence?</h3>
+    <p>
+      This is Brain Upgrade #1 in the Counter-AI Movement's year-long curriculum. Each subsequent post builds on this foundation, progressively developing your cognitive independence.
+    </p>
+    <button class="cta-button" type="button" aria-label="Join the Counter-AI Movement">
+      Start Your Brain Upgrade Journey
+    </button>
+  </section>
+  
+</div>
+
+<!-- ========================================
+     SCOPED JAVASCRIPT
+     All functionality contained within IIFE
+======================================== -->
+<script>
+(function() {
+  'use strict';
+  
+  // Exit if container doesn't exist
+  var container = document.getElementById('career-article-container');
+  if (!container) return;
+  
+  // Check for reduced motion preference
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  // Scroll Reveal Animation
+  function initScrollReveal() {
+    if (prefersReducedMotion) {
+      var reveals = container.querySelectorAll('.reveal');
+      reveals.forEach(function(el) {
+        el.classList.add('visible');
+      });
+      return;
+    }
+    
+    var reveals = container.querySelectorAll('.reveal');
+    
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    });
+    
+    reveals.forEach(function(el) {
+      observer.observe(el);
+    });
+  }
+  
+  // CTA Button Interaction
+  function initCTAButton() {
+    var ctaButton = container.querySelector('.cta-button');
+    if (!ctaButton) return;
+    
+    ctaButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      var originalText = this.textContent;
+      this.textContent = 'Journey Started!';
+      this.style.background = 'linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%)';
+      this.style.color = '#c9a227';
+      
+      setTimeout(function() {
+        ctaButton.textContent = originalText;
+        ctaButton.style.background = '';
+        ctaButton.style.color = '';
+      }, 2000);
+    });
+  }
+  
+  // Card Hover Enhancement (for touch devices)
+  function initTouchEnhancements() {
+    var cards = container.querySelectorAll('.benefit-card, .skill-card, .fact-item, .action-day');
+    
+    cards.forEach(function(card) {
+      card.addEventListener('touchstart', function() {
+        this.classList.add('touch-active');
+      }, { passive: true });
+      
+      card.addEventListener('touchend', function() {
+        var self = this;
+        setTimeout(function() {
+          self.classList.remove('touch-active');
+        }, 150);
+      }, { passive: true });
+    });
+  }
+  
+  // Image Lazy Loading Fallback
+  function initLazyLoading() {
+    var images = container.querySelectorAll('img[loading="lazy"]');
+    
+    if ('loading' in HTMLImageElement.prototype) {
+      return;
+    }
+    
+    var imageObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var img = entry.target;
+          img.src = img.dataset.src || img.src;
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+    
+    images.forEach(function(img) {
+      imageObserver.observe(img);
+    });
+  }
+  
+  // Initialize all features
+  function init() {
+    initScrollReveal();
+    initCTAButton();
+    initTouchEnhancements();
+    initLazyLoading();
+  }
+  
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  
+})();
+</script>
+
 </body>
 </html>
